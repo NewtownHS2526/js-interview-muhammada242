@@ -10,9 +10,10 @@
 // Task: Write a simple if statement
 // Hint: Just check one condition at a time
 function easyProblem1(roomType, guestAge) {
-    // TODO: Write your code here
-    // If roomType is "Presidential" AND guestAge is 21, return "can access"
-    // Otherwise return "go home"
+    if (roomType === "Presidential" && guestAge === 21) {
+        return "can access";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -25,9 +26,10 @@ console.log("Easy 1 - Test 2:", easyProblem1("Deluxe", 21)); // Should print: "g
 // Task: Use if-else to handle two cases
 // Hint: if handles one case, else handles the other
 function easyProblem2(roomType, guestAge) {
-    // TODO: Write your code here
-    // If guestAge is 21 AND roomType is NOT "Presidential", return "can sign in"
-    // Otherwise return "go home"
+    if (guestAge === 21 && roomType !== "Presidential") {
+        return "can sign in";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -41,11 +43,13 @@ console.log("Easy 2 - Test 3:", easyProblem2("Suite", 19)); // Should print: "go
 // Task: Handle all three rules in one function
 // Hint: Use if, else if, and else
 function mediumProblem(roomType, guestAge) {
-    // TODO: Write your code here
-    // Create a complete if-else if-else chain:
-    // 1. First check: roomType === "Presidential" && guestAge === 21 → "can access"
-    // 2. Second check: guestAge === 21 && roomType !== "Presidential" → "can sign in"
-    // 3. Everything else → "go home"
+    if (roomType === "Presidential" && guestAge === 21) {
+        return "can access";
+    } else if (guestAge === 21 && roomType !== "Presidential") {
+        return "can sign in";
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -60,17 +64,15 @@ console.log("Medium - Test 4:", mediumProblem("Standard", 25)); // Should print:
 // Task: Use nested if statements with multiple levels
 // Hint: First check guestAge, then check roomType inside
 function hardProblem(roomType, guestAge) {
-    // TODO: Write your code here
-    // Structure your code like this:
-    // if (guestAge is 21) {
-    //     if (roomType is "Presidential") {
-    //         return "can access"
-    //     } else {
-    //         return "can sign in"
-    //     }
-    // } else {
-    //     return "go home"
-    // }
+    if (guestAge === 21) {
+        if (roomType === "Presidential") {
+            return "can access";
+        } else {
+            return "can sign in";
+        }
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -79,4 +81,3 @@ console.log("Hard - Test 2:", hardProblem("Deluxe", 21)); // Should print: "can 
 console.log("Hard - Test 3:", hardProblem("Presidential", 20)); // Should print: "go home"
 console.log("Hard - Test 4:", hardProblem("Suite", 21)); // Should print: "can sign in"
 console.log("Hard - Test 5:", hardProblem("Standard", 19)); // Should print: "go home"
-

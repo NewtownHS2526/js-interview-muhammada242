@@ -10,9 +10,10 @@
 // Task: Use && to check both servicePackage and age
 // Hint: Both conditions must be true for && to work
 function easyProblem1(servicePackage, age) {
-    // TODO: Write your code here
-    // If servicePackage is "Royal" AND age is 21, return "can access"
-    // Otherwise return "go home"
+    if (servicePackage === "Royal" && age === 21) {
+        return "can access";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -26,9 +27,10 @@ console.log("Easy 1 - Test 3:", easyProblem1("Standard", 21)); // Should print: 
 // Task: Check if servicePackage is different from "Royal"
 // Hint: !== checks if values are NOT equal
 function easyProblem2(servicePackage, age) {
-    // TODO: Write your code here
-    // If age is 21 AND servicePackage is NOT "Royal", return "can sign in"
-    // Otherwise return "go home"
+    if (age === 21 && servicePackage !== "Royal") {
+        return "can sign in";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -42,18 +44,13 @@ console.log("Easy 2 - Test 3:", easyProblem2("Basic", 19)); // Should print: "go
 // Task: Write all three conditions using if-else if-else
 // Hint: Check each condition carefully
 function mediumProblem(servicePackage, age) {
-    // TODO: Write your code here
-    // Write a complete if-else if-else chain:
-    // 
-    // if (first condition) {
-    //     return "can access"
-    // } else if (second condition) {
-    //     return "can sign in"
-    // } else {
-    //     return "go home"
-    // }
-    //
-    // Remember: Check servicePackage === "Royal" && age === 21 first!
+    if (servicePackage === "Royal" && age === 21) {
+        return "can access";
+    } else if (age === 21 && servicePackage !== "Royal") {
+        return "can sign in";
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -69,18 +66,15 @@ console.log("Medium - Test 5:", mediumProblem("Standard", 25)); // Should print:
 // Task: Use nested if-else statements with proper structure
 // Hint: Think about the logic flow - what should be checked first?
 function hardProblem(servicePackage, age) {
-    // TODO: Write your code here
-    // Create nested if statements:
-    //
-    // First, check if age is 21:
-    //   - If age is 21:
-    //     - Check servicePackage:
-    //       - If servicePackage is "Royal" → return "can access"
-    //       - If servicePackage is anything else → return "can sign in"
-    //   - If age is NOT 21:
-    //     - Return "go home"
-    //
-    // Why is this structure better? Think about it!
+    if (age === 21) {
+        if (servicePackage === "Royal") {
+            return "can access";
+        } else {
+            return "can sign in";
+        }
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -90,4 +84,3 @@ console.log("Hard - Test 3:", hardProblem("Royal", 20)); // Should print: "go ho
 console.log("Hard - Test 4:", hardProblem("Deluxe", 21)); // Should print: "can sign in"
 console.log("Hard - Test 5:", hardProblem("Standard", 30)); // Should print: "go home"
 console.log("Hard - Test 6:", hardProblem("Basic", 21)); // Should print: "can sign in"
-

@@ -10,9 +10,10 @@
 // Task: Check two conditions with &&
 // Hint: && means both must be true
 function easyProblem1(playerRank, level) {
-    // TODO: Write your code here
-    // Check if playerRank is "Elite" AND level is 10
-    // Return "can access" if both are true, otherwise "go home"
+    if (playerRank === "Elite" && level === 10) {
+        return "can access";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -26,9 +27,10 @@ console.log("Easy 1 - Test 3:", easyProblem1("Pro", 10)); // Should print: "go h
 // Task: Check if something is NOT equal
 // Hint: !== means "not equal to"
 function easyProblem2(playerRank, level) {
-    // TODO: Write your code here
-    // Check if level is 10 AND playerRank is NOT "Elite"
-    // Return "can sign in" if true, otherwise "go home"
+    if (level === 10 && playerRank !== "Elite") {
+        return "can sign in";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -42,11 +44,13 @@ console.log("Easy 2 - Test 3:", easyProblem2("Beginner", 8)); // Should print: "
 // Task: Use if-else if-else to check all cases
 // Hint: Check conditions one by one
 function mediumProblem(playerRank, level) {
-    // TODO: Write your code here
-    // Write if-else if-else to handle:
-    // 1. playerRank === "Elite" && level === 10 → "can access"
-    // 2. level === 10 && playerRank !== "Elite" → "can sign in"
-    // 3. All other cases → "go home"
+    if (playerRank === "Elite" && level === 10) {
+        return "can access";
+    } else if (level === 10 && playerRank !== "Elite") {
+        return "can sign in";
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -62,20 +66,15 @@ console.log("Medium - Test 5:", mediumProblem("Master", 15)); // Should print: "
 // Task: Create nested if-else statements
 // Hint: Check level first, then check playerRank inside
 function hardProblem(playerRank, level) {
-    // TODO: Write your code here
-    // Use nested if statements:
-    // 
-    // if (level === 10) {
-    //     if (playerRank === "Elite") {
-    //         return "can access"
-    //     } else {
-    //         return "can sign in"
-    //     }
-    // } else {
-    //     return "go home"
-    // }
-    //
-    // Think: Why do we check level first? What happens if level is not 10?
+    if (level === 10) {
+        if (playerRank === "Elite") {
+            return "can access";
+        } else {
+            return "can sign in";
+        }
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:

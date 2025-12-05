@@ -10,9 +10,10 @@
 // Task: Write a simple if statement
 // Hint: Just check one condition at a time
 function easyProblem1(memberStatus, age) {
-    // TODO: Write your code here
-    // If memberStatus is "VIP" AND age is 18, return "can access"
-    // Otherwise return "go home"
+    if (memberStatus === "VIP" && age === 18) {
+        return "can access";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -25,9 +26,10 @@ console.log("Easy 1 - Test 2:", easyProblem1("Regular", 18)); // Should print: "
 // Task: Use if-else to handle two cases
 // Hint: if handles one case, else handles the other
 function easyProblem2(memberStatus, age) {
-    // TODO: Write your code here
-    // If age is 18 AND memberStatus is NOT "VIP", return "can sign in"
-    // Otherwise return "go home"
+    if (age === 18 && memberStatus !== "VIP") {
+        return "can sign in";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -41,11 +43,13 @@ console.log("Easy 2 - Test 3:", easyProblem2("Member", 17)); // Should print: "g
 // Task: Handle all three rules in one function
 // Hint: Use if, else if, and else
 function mediumProblem(memberStatus, age) {
-    // TODO: Write your code here
-    // Create a complete if-else if-else chain:
-    // 1. First check: memberStatus === "VIP" && age === 18 → "can access"
-    // 2. Second check: age === 18 && memberStatus !== "VIP" → "can sign in"
-    // 3. Everything else → "go home"
+    if (memberStatus === "VIP" && age === 18) {
+        return "can access";
+    } else if (age === 18 && memberStatus !== "VIP") {
+        return "can sign in";
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -60,17 +64,15 @@ console.log("Medium - Test 4:", mediumProblem("Member", 22)); // Should print: "
 // Task: Use nested if statements with multiple levels
 // Hint: First check age, then check memberStatus inside
 function hardProblem(memberStatus, age) {
-    // TODO: Write your code here
-    // Structure your code like this:
-    // if (age is 18) {
-    //     if (memberStatus is "VIP") {
-    //         return "can access"
-    //     } else {
-    //         return "can sign in"
-    //     }
-    // } else {
-    //     return "go home"
-    // }
+    if (age === 18) {
+        if (memberStatus === "VIP") {
+            return "can access";
+        } else {
+            return "can sign in";
+        }
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -79,4 +81,3 @@ console.log("Hard - Test 2:", hardProblem("Regular", 18)); // Should print: "can
 console.log("Hard - Test 3:", hardProblem("VIP", 17)); // Should print: "go home"
 console.log("Hard - Test 4:", hardProblem("Member", 18)); // Should print: "can sign in"
 console.log("Hard - Test 5:", hardProblem("Guest", 20)); // Should print: "go home"
-

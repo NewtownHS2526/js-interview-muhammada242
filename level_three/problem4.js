@@ -10,9 +10,10 @@
 // Task: Check two conditions with &&
 // Hint: && means both must be true
 function easyProblem1(memberLevel, age) {
-    // TODO: Write your code here
-    // Check if memberLevel is "Elite" AND age is 16
-    // Return "can access" if both are true, otherwise "go home"
+    if (memberLevel === "Elite" && age === 16) {
+        return "can access";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -26,9 +27,10 @@ console.log("Easy 1 - Test 3:", easyProblem1("Basic", 16)); // Should print: "go
 // Task: Check if something is NOT equal
 // Hint: !== means "not equal to"
 function easyProblem2(memberLevel, age) {
-    // TODO: Write your code here
-    // Check if age is 16 AND memberLevel is NOT "Elite"
-    // Return "can sign in" if true, otherwise "go home"
+    if (age === 16 && memberLevel !== "Elite") {
+        return "can sign in";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -42,11 +44,13 @@ console.log("Easy 2 - Test 3:", easyProblem2("Premium", 14)); // Should print: "
 // Task: Use if-else if-else to check all cases
 // Hint: Check conditions one by one
 function mediumProblem(memberLevel, age) {
-    // TODO: Write your code here
-    // Write if-else if-else to handle:
-    // 1. memberLevel === "Elite" && age === 16 → "can access"
-    // 2. age === 16 && memberLevel !== "Elite" → "can sign in"
-    // 3. All other cases → "go home"
+    if (memberLevel === "Elite" && age === 16) {
+        return "can access";
+    } else if (age === 16 && memberLevel !== "Elite") {
+        return "can sign in";
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -62,20 +66,15 @@ console.log("Medium - Test 5:", mediumProblem("Basic", 20)); // Should print: "g
 // Task: Create nested if-else statements
 // Hint: Check age first, then check memberLevel inside
 function hardProblem(memberLevel, age) {
-    // TODO: Write your code here
-    // Use nested if statements:
-    // 
-    // if (age === 16) {
-    //     if (memberLevel === "Elite") {
-    //         return "can access"
-    //     } else {
-    //         return "can sign in"
-    //     }
-    // } else {
-    //     return "go home"
-    // }
-    //
-    // Think: Why do we check age first? What happens if age is not 16?
+    if (age === 16) {
+        if (memberLevel === "Elite") {
+            return "can access";
+        } else {
+            return "can sign in";
+        }
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -85,4 +84,3 @@ console.log("Hard - Test 3:", hardProblem("Elite", 15)); // Should print: "go ho
 console.log("Hard - Test 4:", hardProblem("Premium", 16)); // Should print: "can sign in"
 console.log("Hard - Test 5:", hardProblem("Basic", 18)); // Should print: "go home"
 console.log("Hard - Test 6:", hardProblem("VIP", 16)); // Should print: "can sign in"
-

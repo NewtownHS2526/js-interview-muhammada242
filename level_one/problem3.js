@@ -10,9 +10,10 @@
 // Task: Write a simple if statement
 // Hint: Just check one condition at a time
 function easyProblem1(membershipLevel, age) {
-    // TODO: Write your code here
-    // If membershipLevel is "Gold" AND age is 21, return "can access"
-    // Otherwise return "go home"
+    if (membershipLevel === "Gold" && age === 21) {
+        return "can access";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -25,9 +26,10 @@ console.log("Easy 1 - Test 2:", easyProblem1("Silver", 21)); // Should print: "g
 // Task: Use if-else to handle two cases
 // Hint: if handles one case, else handles the other
 function easyProblem2(membershipLevel, age) {
-    // TODO: Write your code here
-    // If age is 21 AND membershipLevel is NOT "Gold", return "can sign in"
-    // Otherwise return "go home"
+    if (age === 21 && membershipLevel !== "Gold") {
+        return "can sign in";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -41,11 +43,13 @@ console.log("Easy 2 - Test 3:", easyProblem2("Bronze", 20)); // Should print: "g
 // Task: Handle all three rules in one function
 // Hint: Use if, else if, and else
 function mediumProblem(membershipLevel, age) {
-    // TODO: Write your code here
-    // Create a complete if-else if-else chain:
-    // 1. First check: membershipLevel === "Gold" && age === 21 → "can access"
-    // 2. Second check: age === 21 && membershipLevel !== "Gold" → "can sign in"
-    // 3. Everything else → "go home"
+    if (membershipLevel === "Gold" && age === 21) {
+        return "can access";
+    } else if (age === 21 && membershipLevel !== "Gold") {
+        return "can sign in";
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -60,17 +64,15 @@ console.log("Medium - Test 4:", mediumProblem("Bronze", 25)); // Should print: "
 // Task: Use nested if statements with multiple levels
 // Hint: First check age, then check membershipLevel inside
 function hardProblem(membershipLevel, age) {
-    // TODO: Write your code here
-    // Structure your code like this:
-    // if (age is 21) {
-    //     if (membershipLevel is "Gold") {
-    //         return "can access"
-    //     } else {
-    //         return "can sign in"
-    //     }
-    // } else {
-    //     return "go home"
-    // }
+    if (age === 21) {
+        if (membershipLevel === "Gold") {
+            return "can access";
+        } else {
+            return "can sign in";
+        }
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:

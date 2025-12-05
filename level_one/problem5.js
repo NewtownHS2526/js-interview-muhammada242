@@ -10,9 +10,10 @@
 // Task: Use && to check both ticketCategory and age
 // Hint: Both conditions must be true for && to work
 function easyProblem1(ticketCategory, age) {
-    // TODO: Write your code here
-    // If ticketCategory is "Backstage" AND age is 18, return "can access"
-    // Otherwise return "go home"
+    if (ticketCategory === "Backstage" && age === 18) {
+        return "can access";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -26,9 +27,10 @@ console.log("Easy 1 - Test 3:", easyProblem1("General", 18)); // Should print: "
 // Task: Check if ticketCategory is different from "Backstage"
 // Hint: !== checks if values are NOT equal
 function easyProblem2(ticketCategory, age) {
-    // TODO: Write your code here
-    // If age is 18 AND ticketCategory is NOT "Backstage", return "can sign in"
-    // Otherwise return "go home"
+    if (age === 18 && ticketCategory !== "Backstage") {
+        return "can sign in";
+    }
+    return "go home";
 }
 
 // Test your code:
@@ -42,18 +44,13 @@ console.log("Easy 2 - Test 3:", easyProblem2("VIP", 16)); // Should print: "go h
 // Task: Write all three conditions using if-else if-else
 // Hint: Check each condition carefully
 function mediumProblem(ticketCategory, age) {
-    // TODO: Write your code here
-    // Write a complete if-else if-else chain:
-    // 
-    // if (first condition) {
-    //     return "can access"
-    // } else if (second condition) {
-    //     return "can sign in"
-    // } else {
-    //     return "go home"
-    // }
-    //
-    // Remember: Check ticketCategory === "Backstage" && age === 18 first!
+    if (ticketCategory === "Backstage" && age === 18) {
+        return "can access";
+    } else if (age === 18 && ticketCategory !== "Backstage") {
+        return "can sign in";
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -69,18 +66,15 @@ console.log("Medium - Test 5:", mediumProblem("Premium", 20)); // Should print: 
 // Task: Use nested if-else statements with proper structure
 // Hint: Think about the logic flow - what should be checked first?
 function hardProblem(ticketCategory, age) {
-    // TODO: Write your code here
-    // Create nested if statements:
-    //
-    // First, check if age is 18:
-    //   - If age is 18:
-    //     - Check ticketCategory:
-    //       - If ticketCategory is "Backstage" → return "can access"
-    //       - If ticketCategory is anything else → return "can sign in"
-    //   - If age is NOT 18:
-    //     - Return "go home"
-    //
-    // Why is this structure better? Think about it!
+    if (age === 18) {
+        if (ticketCategory === "Backstage") {
+            return "can access";
+        } else {
+            return "can sign in";
+        }
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
